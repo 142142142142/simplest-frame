@@ -43,7 +43,7 @@ export default async (req, context) => {
             <meta property="fc:frame" content="vNext" />
             <meta property="fc:frame:image" content="${imagePath}" />
             <meta property="fc:frame:button:1" content="Frame me!" />
-            <title>Simplest Frame</title>
+            <title>Goldy is the king</title>
         </head>
         <body>
             <h1>The Simplest Frame</h1>
