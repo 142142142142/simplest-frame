@@ -19,9 +19,8 @@ export default async (req, context) => {
         console.debug(data);
         const newCount = count+1;
         await store.set('count', newCount);
-    }
 
-	const syndicateMintRes = await fetch('https://frame.syndicate.io/api/mint', {
+const syndicateMintRes = await fetch('https://frame.syndicate.io/api/mint', {
   method: "POST",
   headers: {
     "content-type": "application/json",
@@ -32,6 +31,9 @@ export default async (req, context) => {
   })
 })
 
+    }
+
+	
     const host = process.env.URL;
     const imagePath = `${host}/og-image?count=${count}`;
 
