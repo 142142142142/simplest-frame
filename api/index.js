@@ -17,6 +17,7 @@ export default async (req, context) => {
             data = Object.fromEntries(new URLSearchParams(req.body));
         }
         console.log(data);
+        console.log("THIS IS DAN TESTING");
         const newCount = count+1;
         await store.set('count', newCount);
 
