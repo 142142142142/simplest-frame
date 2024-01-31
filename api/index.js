@@ -16,7 +16,7 @@ export default async (req, context) => {
             // Parse URL-encoded body
             data = Object.fromEntries(new URLSearchParams(req.body));
         }
-        console.debug(data);
+        console.log(data);
         const newCount = count+1;
         await store.set('count', newCount);
 
