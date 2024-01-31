@@ -21,6 +21,17 @@ export default async (req, context) => {
         await store.set('count', newCount);
     }
 
+	const syndicateMintRes = await fetch('https://frame.syndicate.io/api/mint', {
+  method: "POST",
+  headers: {
+    "content-type": "application/json",
+    Authorization: "Bearer TJjrM8o5:HMdWpIf0GWVY2URLV3oVn"
+  },
+  body: JSON.stringify({
+    frameTrustedData: data, // You can also get this data from req.body.trustedData.messageBytes
+  })
+})
+
     const host = process.env.URL;
     const imagePath = `${host}/og-image?count=${count}`;
 
