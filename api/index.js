@@ -12,11 +12,14 @@ export default async (req, context) => {
         if (req.headers['content-type'] === 'application/json') {
             // Parse JSON body
             data = JSON.parse(req.body);
+	   console.log('JSON POST Data:', data);
         } else if (req.headers['content-type'] === 'application/x-www-form-urlencoded') {
             // Parse URL-encoded body
             data = Object.fromEntries(new URLSearchParams(req.body));
+	   console.log('URL ENCODED Data:', data);
         }
         console.log(data);
+        console.log(req.body);
         console.log("THIS IS DAN TESTING");
         const newCount = count+1;
         await store.set('count', newCount);
